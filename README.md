@@ -42,40 +42,53 @@ s.n. dasgupta
 ### Display the content of the files
 cat < file1
 ## OUTPUT
+```
 chanchal singhvi
 c.k. shukla
 s.n. dasgupta
 sumit chakrobarty
-
+```
 
 cat < file2
 ## OUTPUT
+```
 anil aggarwal
 barun sengupta
 c.k. shukla
 lalit chowdury
 s.n. dasgupta
-
+```
 # Comparing Files
 cmp file1 file2
 ## OUTPUT
+```
 file1 file2 differ: char 1, line 1
+```
 comm file1 file2
  ## OUTPUT
-BusyBox v1.31.1 () multi-call binary.
- 
-Usage: comm [-123] FILE1 FILE2
- 
-Compare FILE1 with FILE2
- 
-        -1      Suppress lines unique to FILE1
-        -2      Suppress lines unique to FILE2
-        -3      Suppress lines common to both files
- 
+ ```
+anil aggarwal
+        barun sengupta
+        c.k. shukla
+chanchal singhvi
+c.k. shukla
+        lalit chowdury
+                s.n. dasgupta
+```
 diff file1 file2
 ## OUTPUT
-
-
+```
+--- file1
++++ file2
+@@ -1,4 +1,5 @@
+-chanchal singhvi
++anil aggarwal
++barun sengupta
+ c.k. shukla
++lalit chowdury
+ s.n. dasgupta
+-sumit chakrobarty
+```
 #Filters
 
 ### Create the following files file11, file22 as follows:
@@ -97,17 +110,27 @@ cat > file22
 
 cut -c1-3 file11
 ## OUTPUT
-
-
+```
+Hel
+Thi
+```
 
 
 cut -d "|" -f 1 file22
 ## OUTPUT
-
-
+```
+1001
+1002
+1003
+```
 
 cut -d "|" -f 2 file22
 ## OUTPUT
+```
+ Ram
+ tom
+ Joe
+```
 
 
 cat < newfile 
